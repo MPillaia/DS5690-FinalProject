@@ -107,10 +107,75 @@ With this curated dataset, the model can learn from **high-quality Q&A pairs** s
 **In summary, this project’s methodology balances lightweight retrieval-augmented generation with an optional adapter-based fine-tuning step.** By referencing locally stored documents and selectively training adapters on domain-specific data, the user can expect relevant, private, and accurately tailored outputs from their own research companion LLM.
 
 ## 3. Results
-- **Code Walkthrough**  
-- **Demo**
-- **Planned Quantitative Validation**
-- 
+### 3.1 **Code Walkthrough**
+
+---
+
+### 3.2 **Demo**
+
+---
+
+### 3.3 Planned Quantitative Validation
+
+In this experiment, the performance of three different model setups will be evaluated across five ongoing research projects:
+
+1. **Base Model**  
+2. **RAG + Base Model** (i.e., retrieval-augmented generation with the base model)  
+3. **RAG + Fine-Tuned Model** (i.e., retrieval-augmented generation with the fine-tuned model)
+
+For each of the five projects:
+- Two lab members will each compare the responses to **5 questions**.  
+- They will provide pairwise preferences among the different model outputs.  
+  1. Base Model vs. RAG + Base Model  
+  2. Base Model vs. RAG + Fine-Tuned Model  
+  3. RAG + Base Model vs. RAG + Fine-Tuned Model  
+
+From these comparisons, we will compute the **winrate** for:
+- **RAG + Base Model** over Base Model  
+- **RAG + Fine-Tuned Model** over Base Model  
+- **RAG + Fine-Tuned Model** over RAG + Base Model  
+
+The following tables are placeholders for recording and summarizing the eventual winrate data. Fill in the results once you complete the pairwise evaluations.
+
+---
+
+#### RAG + Base Model vs. Base Model
+
+| Project   | Win Rate (RAG + Base) | Comments |
+|-----------|------------------------|----------|
+| Project 1 |                        |          |
+| Project 2 |                        |          |
+| Project 3 |                        |          |
+| Project 4 |                        |          |
+| Project 5 |                        |          |
+| **Average** |                      |          |
+
+---
+
+#### RAG + Fine-Tuned Model vs. Base Model
+
+| Project   | Win Rate (RAG + Fine-Tuned) | Comments |
+|-----------|-----------------------------|----------|
+| Project 1 |                             |          |
+| Project 2 |                             |          |
+| Project 3 |                             |          |
+| Project 4 |                             |          |
+| Project 5 |                             |          |
+| **Average** |                           |          |
+
+---
+
+#### RAG + Fine-Tuned Model vs. RAG + Base Model
+
+| Project   | Win Rate (RAG + Fine-Tuned) | Comments |
+|-----------|-----------------------------|----------|
+| Project 1 |                             |          |
+| Project 2 |                             |          |
+| Project 3 |                             |          |
+| Project 4 |                             |          |
+| Project 5 |                             |          |
+| **Average** |                           |          |
+
 ## 4. Critical Analysis & Future Work
 - **Assessment & Evaluation**  
   - Reflect on whether your approach met the project goals.  
