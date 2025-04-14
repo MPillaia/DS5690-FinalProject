@@ -1,4 +1,4 @@
-# Title of Your Project
+# Local LLM-based Research Companion
 
 ## 1. Problem Statement & Overview
 In this project, the goal is to create a **local research companion LLM** that can answer queries based on a user’s manuscript and a collection of reference documents. Traditional large-scale LLM services are often cloud-based and may pose confidentiality or bandwidth concerns. By storing data locally and embedding reference texts, this project ensures **data privacy** while maintaining the ability to retrieve and synthesize relevant information. 
@@ -73,6 +73,18 @@ To further tailor the model to this specific research context, a hand-curated da
 1. **Question Bank Generation**  
    - A set of **25 questions** (listed below) was compiled, each targeting a unique aspect of the reference PDF. These questions ranged from summarizing figures and conclusions to deeper queries about limitations, methodology, and ethical considerations.
 
+<small>
+
+| Questions |  |  |  |  |
+|-----------|--|--|--|--|
+| **Q1** Summarize the figures in this paper. | **Q2** Summarize the methods used. | **Q3** What are the main conclusions of this paper? | **Q4** What are some anticipated questions by reviewers? | **Q5** What are the main novelties and contributions made by this paper? |
+| **Q6** What problem does this paper aim to solve? | **Q7** What are the limitations acknowledged by the authors? | **Q8** What related work does the paper compare itself to? | **Q9** How does this work improve upon previous methods? | **Q10** What are the key results presented in the paper? |
+| **Q11** What datasets or benchmarks were used in the experiments? | **Q12** How reproducible are the experiments and results? | **Q13** What assumptions does this study make? | **Q14** What is the theoretical foundation of the proposed method? | **Q15** Are the performance improvements statistically significant? |
+| **Q16** What are the implications of this research? | **Q17** What real-world applications could benefit from this work? | **Q18** Is the code or data publicly available? | **Q19** What ablation studies were conducted and what did they show? | **Q20** What hyperparameters were used, and how were they chosen? |
+| **Q21** Does the paper include error analysis or failure cases? | **Q22** What future directions do the authors suggest? | **Q23** Are there any ethical considerations discussed? | **Q24** How generalizable are the results across domains or datasets? | **Q25** What are the potential risks or drawbacks of this approach? |
+
+</small>
+
 2. **AI-Assisted Draft Answers**  
    - The questions and reference PDF were provided to GPT 4o, which generated initial draft answers.
 
@@ -88,18 +100,6 @@ To further tailor the model to this specific research context, a hand-curated da
      ```
    - This CSV forms the **fine-tuning dataset** that LoRA uses to further adapt the base model.
 
-<small>
-
-| Questions |  |  |  |  |
-|-----------|--|--|--|--|
-| **Q1** Summarize the figures in this paper. | **Q2** Summarize the methods used. | **Q3** What are the main conclusions of this paper? | **Q4** What are some anticipated questions by reviewers? | **Q5** What are the main novelties and contributions made by this paper? |
-| **Q6** What problem does this paper aim to solve? | **Q7** What are the limitations acknowledged by the authors? | **Q8** What related work does the paper compare itself to? | **Q9** How does this work improve upon previous methods? | **Q10** What are the key results presented in the paper? |
-| **Q11** What datasets or benchmarks were used in the experiments? | **Q12** How reproducible are the experiments and results? | **Q13** What assumptions does this study make? | **Q14** What is the theoretical foundation of the proposed method? | **Q15** Are the performance improvements statistically significant? |
-| **Q16** What are the implications of this research? | **Q17** What real-world applications could benefit from this work? | **Q18** Is the code or data publicly available? | **Q19** What ablation studies were conducted and what did they show? | **Q20** What hyperparameters were used, and how were they chosen? |
-| **Q21** Does the paper include error analysis or failure cases? | **Q22** What future directions do the authors suggest? | **Q23** Are there any ethical considerations discussed? | **Q24** How generalizable are the results across domains or datasets? | **Q25** What are the potential risks or drawbacks of this approach? |
-
-</small>
-
 With this curated dataset, the model can learn from **high-quality Q&A pairs** specifically tailored to the user’s reference material, thereby improving its domain-specific performance during inference.
 
 ---
@@ -107,13 +107,10 @@ With this curated dataset, the model can learn from **high-quality Q&A pairs** s
 **In summary, this project’s methodology balances lightweight retrieval-augmented generation with an optional adapter-based fine-tuning step.** By referencing locally stored documents and selectively training adapters on domain-specific data, the user can expect relevant, private, and accurately tailored outputs from their own research companion LLM.
 
 ## 3. Results
-- **Key Findings**  
-  - Present quantitative or qualitative outcomes.  
-  - Include brief examples or data samples illustrating your results.
-- **Demo (if applicable)**  
-  - Show a short snippet or walkthrough of your code in action.  
-  - Highlight interesting outputs or behaviors.
-
+- **Code Walkthrough**  
+- **Demo**
+- **Planned Quantitative Validation**
+- 
 ## 4. Critical Analysis & Future Work
 - **Assessment & Evaluation**  
   - Reflect on whether your approach met the project goals.  
