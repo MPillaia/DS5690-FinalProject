@@ -205,16 +205,16 @@ The following tables are placeholders for recording and summarizing the eventual
     4. **Embedding / Indexing Gaps**: If the embedding model or FAISS indexing isn’t capturing the text’s nuances, relevant documents might not be retrieved accurately, leading to incomplete or nonsensical responses.
 
 - **Next Steps**  
-  1. **Improve Retrieval & Prompt Engineering**  
+  - **Improve Retrieval & Prompt Engineering**  
      - Refine the chunking and embedding methods to ensure better semantic capture.  
      - Experiment with more advanced prompt templates or short “prompt engineering recipes” to ensure the LLM receives well-structured and relevant context.  
-  2. **Explore Larger or More Specialized Base Models**  
+  - **Explore Larger or More Specialized Base Models**  
      - Switch to a model that has demonstrated strong performance on specialized tasks.  
      - Consider domain-specific models if the research context is highly technical or niche.  
-  3. **Refine Fine-Tuning Approach**  
+  - **Refine Fine-Tuning Approach**  
      - Conduct thorough hyperparameter sweeps to see if the LoRA settings (e.g., learning rate, `r`, etc.) better align the model with the domain.  
      - Expand the fine-tuning dataset beyond 25 Q&A pairs, or incorporate more diverse question types, to enrich the model’s coverage.  
-  4. **Systematic Quality Checks**  
+  - **Systematic Quality Checks**  
      - Implement intermediate checks or “chain-of-thought” gating to detect nonsense outputs early.  
      - Integrate a validation step where the system compares each generation against key reference facts before finalizing an answer.
 
