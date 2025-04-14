@@ -6,7 +6,7 @@ My goal is to create a **local research companion LLM** that can answer queries 
 The system will:
 - **Parse and embed PDFs** (e.g., academic papers, reports) so their content can be recalled when a user asks a question.
 - Provide context-aware answers to queries by integrating references from the user’s own manuscript and supporting documents.
-- **Optionally fine-tune** the base language model on domain-specific data, enhancing its ability to answer specialized questions.
+- **Fine-tune** the base language model on domain-specific data, enhancing its ability to answer specialized questions.
 
 Overall, the project addresses the challenge of allowing researchers to quickly query and reference multiple documents, even in offline or privacy-sensitive scenarios.
 
