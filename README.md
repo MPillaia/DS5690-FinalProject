@@ -103,7 +103,14 @@ To further tailor the model to this specific research context, a hand-curated da
 With this curated dataset, the model can learn from **high-quality Q&A pairs** specifically tailored to the user’s reference material, thereby improving its domain-specific performance during inference.
 
 ---
-### 2.4 Data Card
+
+### 2.4 Pipeline Workflow
+<p align="center">
+   <img src="research_companion_flowchart.png" alt="workflow" style="width:50%;">
+</p>
+---
+
+### 2.5 Data Card
 Below is an overview of the models used in this project and the relevant licenses or restrictions:
 
 1. **GPT-2**  
