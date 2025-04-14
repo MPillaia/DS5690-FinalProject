@@ -1,7 +1,7 @@
 # Local LLM-based Research Companion
 
 ## 1. Problem Statement & Overview
-In this project, the goal is to create a **local research companion LLM** that can answer queries based on a user’s manuscript and a collection of reference documents. Traditional large-scale LLM services are often cloud-based and may pose confidentiality or bandwidth concerns. By storing data locally and embedding reference texts, this project ensures **data privacy** while maintaining the ability to retrieve and synthesize relevant information. 
+My goal is to create a **local research companion LLM** that can answer queries based on a user’s manuscript and a collection of reference documents. Traditional large-scale LLM services are often cloud-based and may pose confidentiality or bandwidth concerns. By storing data locally and embedding reference texts, this project ensures **data privacy** while maintaining the ability to retrieve and synthesize relevant information. 
 
 The system will:
 - **Parse and embed PDFs** (e.g., academic papers, reports) so their content can be recalled when a user asks a question.
