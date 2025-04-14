@@ -206,17 +206,17 @@ The following tables are placeholders for recording and summarizing the eventual
 
 - **Next Steps**  
   - **Improve Retrieval & Prompt Engineering**  
-     - Refine the chunking and embedding methods to ensure better semantic capture.  
-     - Experiment with more advanced prompt templates or short “prompt engineering recipes” to ensure the LLM receives well-structured and relevant context.  
+     1. Refine the chunking and embedding methods to ensure better semantic capture.  
+     2. Experiment with more advanced prompt templates or short “prompt engineering recipes” to ensure the LLM receives well-structured and relevant context.  
   - **Explore Larger or More Specialized Base Models**  
-     - Switch to a model that has demonstrated strong performance on specialized tasks.  
-     - Consider domain-specific models if the research context is highly technical or niche.  
+     1. Switch to a model that has demonstrated strong performance on specialized tasks.  
+     2. Consider domain-specific models if the research context is highly technical or niche.  
   - **Refine Fine-Tuning Approach**  
-     - Conduct thorough hyperparameter sweeps to see if the LoRA settings (e.g., learning rate, `r`, etc.) better align the model with the domain.  
-     - Expand the fine-tuning dataset beyond 25 Q&A pairs, or incorporate more diverse question types, to enrich the model’s coverage.  
+     1. Conduct thorough hyperparameter sweeps to see if the LoRA settings (e.g., learning rate, `r`, etc.) better align the model with the domain.  
+     2. Expand the fine-tuning dataset beyond 25 Q&A pairs, or incorporate more diverse question types, to enrich the model’s coverage.  
   - **Systematic Quality Checks**  
-     - Implement intermediate checks or “chain-of-thought” gating to detect nonsense outputs early.  
-     - Integrate a validation step where the system compares each generation against key reference facts before finalizing an answer.
+     1. Implement intermediate checks or “chain-of-thought” gating to detect nonsense outputs early.  
+     2. Integrate a validation step where the system compares each generation against key reference facts before finalizing an answer.
 
 - **Impact & Future Potential**  
   - **Relevant User Groups**  
