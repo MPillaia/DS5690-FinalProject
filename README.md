@@ -103,6 +103,24 @@ To further tailor the model to this specific research context, a hand-curated da
 With this curated dataset, the model can learn from **high-quality Q&A pairs** specifically tailored to the user’s reference material, thereby improving its domain-specific performance during inference.
 
 ---
+### 2.4 Data Card
+Below is an overview of the models used in this project and the relevant licenses or restrictions:
+
+1. **GPT-2**  
+   - **Usage**: Used as the base model for inference and demonstration in this project.  
+   - **License**: GPT-2’s model code and weights are released by OpenAI under a permissive license (MIT for the code; weights are also permitted for use, but always verify the latest terms from the official source).  
+   - **Restrictions & Considerations**: Users should comply with the broader OpenAI usage policies and any local regulations regarding data usage and storage.
+
+2. **GPT 4o**  
+   - **Usage**: Employed to generate certain question-answer pairs and as an alternative or more advanced LLM for demonstration or comparison.  
+   - **License**: GPT 4o is proprietary software. Usage must adhere to the relevant terms and conditions specified by its providers (which may include usage limits, restrictions on commercial applications, and API-based access if applicable).  
+   - **Restrictions & Considerations**: As this model is not fully open-source, distribution or modification of the underlying weights is typically disallowed. This should not be a concern for the use case in this project.
+
+3. **Proprietary Algorithms**  
+   - **Status**: No additional proprietary algorithms have been used in this project aside from GPT 4o.  
+   - **Note**: All retrieval, embedding, and fine-tuning methods employed here rely on open-source frameworks and libraries (e.g., FAISS, SentenceTransformer, LoRA) which have their own permissive licenses.
+
+---
 
 **In summary, this project’s methodology balances lightweight retrieval-augmented generation with an optional adapter-based fine-tuning step.** By referencing locally stored documents and selectively training adapters on domain-specific data, the user can expect relevant, private, and accurately tailored outputs from their own research companion LLM.
 
