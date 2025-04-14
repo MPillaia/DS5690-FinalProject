@@ -108,6 +108,7 @@ With this curated dataset, the model can learn from **high-quality Q&A pairs** s
 <p align="center">
    <img src="research_companion_flowchart.png" alt="workflow" style="width:50%;">
 </p>
+
 ---
 
 ### 2.5 Data Card
