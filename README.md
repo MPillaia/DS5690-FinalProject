@@ -177,14 +177,42 @@ The following tables are placeholders for recording and summarizing the eventual
 | **Average** |                           |          |
 
 ## 4. Critical Analysis & Future Work
+
 - **Assessment & Evaluation**  
-  - Reflect on whether your approach met the project goals.  
-  - Discuss strengths and limitations based on data or performance metrics.
-- **Impact and Insights**  
-  - Consider the broader implications of your solution.  
-  - Suggest who benefits most from this project, or where it can be applied.
+  - **Current Implementation’s Failure**  
+    The repeated failures of the current retrieval-augmented approach—where outputs are often incorrect or inconsistent—suggest that the model is not effectively integrating the retrieved chunks or aligning its generation with the context provided. Several factors may be contributing to this:
+    1. **Insufficient Model Capacity or Alignment**: The chosen base model might lack the necessary parameters or pre-training distribution to handle specialized or technical queries even with retrieval.  
+    2. **Ineffective Prompt Construction**: Combining the user’s manuscript and retrieved chunks may be producing prompts that are too lengthy or disjointed, causing confusion in the LLM’s attention mechanism.  
+    3. **Overlooked Fine-Tuning Nuances**: While LoRA adapters are intended to focus training on specific parameters, it’s possible that the training data or hyperparameter setup isn’t well-tuned for the domain.  
+    4. **Embedding / Indexing Gaps**: If the embedding model or FAISS indexing isn’t capturing the text’s nuances, relevant documents might not be retrieved accurately, leading to incomplete or nonsensical responses.
+
 - **Next Steps**  
-  - Propose ways to improve, extend, or refine your work.
+  1. **Improve Retrieval & Prompt Engineering**  
+     - Refine the chunking and embedding methods to ensure better semantic capture.  
+     - Experiment with more advanced prompt templates or short “prompt engineering recipes” to ensure the LLM receives well-structured and relevant context.  
+  2. **Explore Larger or More Specialized Base Models**  
+     - Switch to a model that has demonstrated strong performance on specialized tasks.  
+     - Consider domain-specific models if the research context is highly technical or niche.  
+  3. **Refine Fine-Tuning Approach**  
+     - Conduct thorough hyperparameter sweeps to see if the LoRA settings (e.g., learning rate, `r`, etc.) better align the model with the domain.  
+     - Expand the fine-tuning dataset beyond 25 Q&A pairs, or incorporate more diverse question types, to enrich the model’s coverage.  
+  4. **Systematic Quality Checks**  
+     - Implement intermediate checks or “chain-of-thought” gating to detect nonsense outputs early.  
+     - Integrate a validation step where the system compares each generation against key reference facts before finalizing an answer.
+
+- **Impact & Future Potential**  
+  - **Relevant User Groups**  
+    Despite the current setbacks, the premise of a locally hosted research companion still holds substantial potential. Once the system can correctly retrieve and contextualize reference materials, its **offline and privacy-preserving** design would benefit:  
+    1. **Academic Researchers**: Quick and secure summarization of multiple PDFs without risking data confidentiality.  
+    2. **Industry Practitioners**: Handling proprietary or sensitive documents where data cannot be sent to external servers.  
+    3. **Educational Environments**: Providing students and teachers with a controlled environment to query course materials and references without relying on cloud services.
+
+  - **Promised Impact if Successful**  
+    If these improvements lead to a consistent and reliable workflow, the research companion will:  
+    1. **Facilitate Rapid Literature Review**: Researchers can ask complex questions and receive focused, reference-backed answers, reducing time spent manually scanning documents.  
+    2. **Maintain Confidentiality**: With all data processed locally, proprietary research can be explored without privacy concerns.  
+    3. **Adapt to New Domains**: A robust LoRA fine-tuning method would allow for quick domain shifts, letting the tool serve diverse fields—from biomedical research to legal document analysis.  
+    4. **Empower Offline Workflows**: In environments with limited or regulated internet access, a fully offline system still offers high-quality retrieval and generation.
 
 ## 5. Documentation & Resources
 - **Repo Structure & Setup**  
