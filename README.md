@@ -208,8 +208,6 @@ The following tables are placeholders for recording and summarizing the eventual
     The repeated failures of the current retrieval-augmented approach—where outputs are often incorrect or inconsistent—suggest that the model is not effectively integrating the retrieved chunks or aligning its generation with the context provided. Several factors may be contributing to this:
     1. **Insufficient Model Capacity or Alignment**: The chosen base model might lack the necessary parameters or pre-training distribution to handle specialized or technical queries even with retrieval.  
     2. **Ineffective Prompt Construction**: Combining the user’s manuscript and retrieved chunks may be producing prompts that are too lengthy or disjointed, causing confusion in the LLM’s attention mechanism.  
-    3. **Overlooked Fine-Tuning Nuances**: While LoRA adapters are intended to focus training on specific parameters, it’s possible that the training data or hyperparameter setup isn’t well-tuned for the domain.  
-    4. **Embedding / Indexing Gaps**: If the embedding model or FAISS indexing isn’t capturing the text’s nuances, relevant documents might not be retrieved accurately, leading to incomplete or nonsensical responses.
 
 - **Next Steps**  
   - **Improve Retrieval & Prompt Engineering**  
