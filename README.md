@@ -23,7 +23,7 @@ Retrieval-Augmented Generation combines the strength of **neural language models
      - This chunk size is significant: overly large chunks may degrade retrieval accuracy, and overly small chunks may break important contextual links.
 
 2. **Embedding & Indexing with FAISS**  
-   - **Sentence Embedding**: Each text chunk is passed through a **SentenceTransformer** (e.g., "all-MiniLM-L6-v2") to transform it into a numerical vector. This vector captures the semantic meaning of the chunk.  
+   - **Sentence Embedding**: Each text chunk is passed through a **SentenceTransformer** to transform it into a numerical vector. This vector captures the semantic meaning of the chunk.  
    - **FAISS Index**: Vectors are stored in a FAISS index, a highly optimized library for *vector similarity search*. This index allows for rapid retrieval of chunks most relevant to a given query.
 
 3. **Query-Time Chunk Retrieval**  
