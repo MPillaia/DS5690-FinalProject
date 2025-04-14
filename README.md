@@ -232,16 +232,70 @@ The following tables are placeholders for recording and summarizing the eventual
     3. **Adapt to New Domains**: A robust LoRA fine-tuning method would allow for quick domain shifts, letting the tool serve diverse fields—from biomedical research to legal document analysis.  
     4. **Empower Offline Workflows**: In environments with limited or regulated internet access, a fully offline system still offers high-quality retrieval and generation.
 
-## 5. Documentation & Resources
-- **Repo Structure & Setup**  
-  - Link to repository.  
-  - Summarize installation instructions and usage guidelines.  
-  - Mention any known issues or troubleshooting tips.
-- **Further Reading & References**  
-  - Cite key papers, articles, or code bases.  
-  - Link to any relevant open-source projects or datasets.
+## 5 Documentation & Resources
+### 5.1 **Repo Structure & Setup**  
+  1. Clone the [LocalResearchLLM repository](https://github.com/MPillaia/LocalResearchLLM)  
+     &nbsp;&nbsp;&nbsp;&nbsp;- Note that sample manuscript and references are not provided to prevent improper distribution of published and unpublished work.
+  2. Install required dependencies with `pip install -r requirements.txt`.
+  3. Create a directory named "references" and include PDF files of your desired references.
+  4. Create your fine-tuning CSV file. Any set of question/answer pairs are acceptable, as long as the CSV is in the following format:
+
+     | Reference file name | Question         | Answer         |
+     |---------------------|------------------|----------------|
+     | reference1.pdf      | Sample Question  | Sample Answer  |
+
+  5. Create a PDF copy of your manuscript.
+  6. To complete the RAG processing and fine-tune the base model, run:
+     ```bash
+     python assistant.py --manuscript_file /path/to/manuscript/my_manuscript.pdf --reference_folder /path/to/references --save_rag --fine_tune --finetune_csv_file /path/to/data/finetuning_samples.csv 
+     ```
+  7. After completion, to run your research companion without re-processing, run:
+     ```bash
+     python assistant.py --manuscript_file /path/to/manuscript/my_manuscript.pdf --load_rag --load_model_path /path/to/fine_tuned_model
+     ```
+     &nbsp;&nbsp;&nbsp;&nbsp;- Note that by default the RAG files and `fine_tuned_model` directory will be stored in your working directory. You can specify the specific RAG file locations with the `--rag_index_file` and `--rag_chunks_file` flags.
 
 ---
+
+### 5.2 **Resources & References**  
+  - **Resources/References for Described Methodology**
+
+      - **FAISS**  
+        - Johnson, J., Douze, M., & Jégou, H. (2017). *Billion-scale similarity search with GPUs.* IEEE Transactions on Big Data, 7(3):535–547.  
+        - [Paper](https://arxiv.org/abs/1702.08734)
+   
+      - **LoRA (Low-Rank Adaptation of Large Language Models)**  
+        - Hu, E., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, L., & Chen, W. (2021). *LoRA: Low-Rank Adaptation of Large Language Models.*  
+        - [Paper](https://arxiv.org/abs/2106.09685)
+      
+      - **GPT-2**  
+        - Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). *Language Models are Unsupervised Multitask Learners.* OpenAI Blog.  
+        - [Paper](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
+      
+      - **Retrieval-Augmented Generation**  
+        - Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-T., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.* In *Advances in Neural Information Processing Systems (NeurIPS).*  
+        - [Paper](https://arxiv.org/abs/2005.11401)
+       
+   - **References Used for Demo**
+      - Gandelman, J. S., et al. (2019). *The Anatomic Distribution of Skin Involvement in Patients with Incident Chronic Graft-versus-Host Disease.* Biology of Blood and Marrow Transplantation, 25(2), 279.
+         - [Paper](https://pubmed.ncbi.nlm.nih.gov/30219700/)
+      - Baumrin, E., et al. (2023). *Prognostic Value of Cutaneous Disease Severity Estimates on Survival Outcomes in Patients with Chronic Graft-vs-Host Disease.* JAMA Dermatology, 159(4), 393–402.
+         - [Paper](https://pubmed.ncbi.nlm.nih.gov/36884224/)
+      - Tkaczyk, E. R., et al. (2018). *Overcoming human disagreement assessing erythematous lesion severity on 3D photos of chronic graft-versus-host disease.* Bone Marrow Transplantation, 53(10), 1356–1358.
+         - [Paper](https://pubmed.ncbi.nlm.nih.gov/29740182/)
+      - McNeil, A. J., et al. (2024). *Improving AI Assessment of Cutaneous Chronic Graft-Versus-Host Disease using Unlabeled Patient Photographs.* Journal of Clinical and Translational Science, 8(1), 92–92.
+         - [Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC11033750/)
+      - McNeil, A. J., et al. (2022). *Segmentation of cutaneous chronic graft-versus-host disease by a deep learning neural network.* Journal of Investigative Dermatology, 142(8), 142–142.
+         - [Paper](https://pubmed.ncbi.nlm.nih.gov/35322873/)
+      - Calin, M. A., et al. (2023). *Mapping the Distribution of Melanin Concentration in Different Fitzpatrick Skin Types Using Hyperspectral Imaging Technique.* Photochemistry and Photobiology, 99(3), 1020–1027.
+         - [Paper](https://pubmed.ncbi.nlm.nih.gov/36135823/)
+      - Nkengne, A., et al. (2018). *SpectraCam®: A new polarized hyperspectral imaging system for repeatable and reproducible in vivo skin quantification of melanin, total hemoglobin, and oxygen saturation.* Skin Research and Technology, 24(1), 99–107.
+         - [Paper](https://pubmed.ncbi.nlm.nih.gov/28771832/)
+      - Isensee, F., et al. (2021). *nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation.* Nature Methods, 18(2), 203–211.
+         - [Paper](https://www.nature.com/articles/s41592-020-01008-z)
+---
+
+
 **Additional Considerations (Optional or Embedded Where Relevant):**
 - **Model & Data Cards**  
   - Outline model version/architecture and intended uses.  
